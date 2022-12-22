@@ -1,0 +1,20 @@
+{
+   "type": "module",
+    "name": "shoeproject",
+    "version": "1.0.0",
+    "description": "Just For Fun",
+    "main": "script.js",
+    "scripts": {
+        "start": "lite-server"
+    },
+    "author": "Erica Lee",
+    "license": "ISC",
+    "devDependencies": {
+        "lite-server": "^2.5.4"
+    },
+    "dependencies": {
+        "node-fetch": "^3.3.0",
+        "xhr2": "^0.2.1"
+    }
+    
+}
