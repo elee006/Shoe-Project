@@ -27,14 +27,19 @@ var api_url = 'https://sneaker-database-stockx.p.rapidapi.com/mostpopular';
 
 
 function loadPopImage(d) {
-  var shoeimg = [];
+  //var shoeimg = [];
+  var container = document.getElementById('content');
+  if(container !== null){
   for(let i = 0; i < d.length; i++)
   {
-  
-  shoeimg[i] = d[i].thumbnail;
-  document.getElementById("myImg").src = shoeimg[i];
- 
+    var img = document.createElement('img');
+  //shoeimg[i] = d[i].thumbnail;
+  img.setAttribute('src', d[i].thumbnail);
+   
+  container.appendChild(img);
   }
-  console.log(shoeimg);
+  }
+  
+  //console.log(container);
   
 }
