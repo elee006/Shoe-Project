@@ -28,13 +28,13 @@ var api_url = 'https://sneaker-database-stockx.p.rapidapi.com/mostpopular';
 
 function loadPopImage(d) {
   var shoeimg = [];
-  for(let i = 0; i < 7; i++)
+  for(let i = 0; i < d.length; i++)
   {
   
-  shoeimg[i] = d[i].thumbnail
-  
+  shoeimg[i] = d[i].thumbnail;
+  document.getElementById("myImg").src = shoeimg[i];
  
   }
   console.log(shoeimg);
-  document.getElementById("myImg").src = shoeimg;
+  
 }
