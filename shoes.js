@@ -21,14 +21,24 @@ var api_url = 'https://sneaker-database-stockx.p.rapidapi.com/mostpopular';
 
   .then((data) => {console.log(data)
     loadPopImage(data)
+    showSlides(1)
   })
   .catch((error) => console.error("FETCH ERROR:", error));
 
 
+  function plusSlides(n) {
+    showSlides(slideIndex += n);
+  }
+  
+  // Thumbnail image controls
+  function currentSlide(n) {
+    showSlides(slideIndex = n);
+  }
 
 function loadPopImage(d) {
   //var shoeimg = [];
   var container = document.getElementById('content');
+  var child = document.getElementById('child');
   if(container !== null){
   for(let i = 0; i < d.length; i++)
   {
@@ -37,9 +47,22 @@ function loadPopImage(d) {
   img.setAttribute('src', d[i].thumbnail);
    
   container.appendChild(img);
+
   }
+}
+let children = container.querySelectorAll('img')
+//console.log(children[0]);
+child = children[1];
+console.log(child);
+}
+let slideIndex = 1
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
   }
-  
-  //console.log(container);
-  
+  slides[slideIndex-1].style.display = "block";
 }
