@@ -50,10 +50,15 @@ function loadPopImage(d) {
 
   }
 }
-let children = container.querySelectorAll('img')
-//console.log(children[0]);
-child = children[1];
-console.log(child);
+var children = container.querySelectorAll('img');
+let x = '';
+//console.log(children);
+  for(let i =0; i<d.length;i++)
+  {
+    x  = children[i];
+  }
+  child = x;
+//console.log(child);
 }
 let slideIndex = 1
 function showSlides(n) {
@@ -65,4 +70,5 @@ function showSlides(n) {
     slides[i].style.display = "none";
   }
   slides[slideIndex-1].style.display = "block";
+
 }
